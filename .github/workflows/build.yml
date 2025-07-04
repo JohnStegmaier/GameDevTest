@@ -20,7 +20,7 @@ jobs:
         platform: [windows, linux]
 
     container:
-      image: barichello/godot-ci:${{ vars.GODOT_VERSION }}
+      image: barichello/godot-ci:mono-${{ vars.GODOT_VERSION }}
       options: --memory=6g
 
     steps:
@@ -32,7 +32,7 @@ jobs:
     - name: Setup export templates
       run: |
         mkdir -p ~/.local/share/godot/export_templates/
-        mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
+        mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono
 
     - name: Build project
       run: |
