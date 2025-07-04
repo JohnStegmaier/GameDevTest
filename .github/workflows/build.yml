@@ -33,8 +33,7 @@ jobs:
       run: |
         mkdir -p ~/.local/share/godot/export_templates/
         cp -r /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono
-        ls -lah ~/.local/share/godot/export_templates/
-        cat ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono
+        ls -lah ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono
 
     - name: Build project
       run: |
