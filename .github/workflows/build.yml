@@ -41,7 +41,7 @@ jobs:
         if [ "${{ matrix.platform }}" == "windows" ]; then
           godot --headless --verbose --export-release "Windows Desktop" "../build/windows/${{ env.EXPORT_NAME }}.exe"
         else
-          godot --headless --verbose --export-release "Linux/X11" "../build/linux/${{ env.EXPORT_NAME }}.x86_64"
+          godot --headless --verbose --export-release "Linux" "../build/linux/${{ env.EXPORT_NAME }}.x86_64"
         fi
 
     - name: Upload ${{ matrix.platform }} artifact
