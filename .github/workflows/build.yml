@@ -31,11 +31,8 @@ jobs:
 
     - name: Setup export templates
       run: |
-#        mkdir -p ~/.local/share/godot/export_templates/
-#        mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
-        wget https://github.com/godotengine/godot/releases/download/${GODOT_VERSION}-stable/Godot_v${GODOT_VERSION}-stable_mono_export_templates.tpz -O templates.tpz
-        mkdir -p ~/.local/share/godot/templates/${GODOT_VERSION}.stable/
-        tar -xf template.tpz -C ~/.local/share/godot/templates/${GODOT_VERSION}.stable/
+        mkdir -p ~/.local/share/godot/export_templates/
+        mv /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable
 
     - name: Build project
       run: |
