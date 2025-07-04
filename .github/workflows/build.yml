@@ -38,7 +38,7 @@ jobs:
       run: |
         mkdir -p build/${{ matrix.platform }}
         cd ${{ env.PROJECT_PATH }}
-        if [ "${{ matrix.platform }}" == "windows" ]; then
+        if [ "${{ matrix.platform }}" = "windows" ]; then
           godot --headless --verbose --export-release "Windows Desktop" "../build/windows/${{ env.EXPORT_NAME }}.exe"
         else
           godot --headless --verbose --export-release "Linux" "../build/linux/${{ env.EXPORT_NAME }}.x86_64"
