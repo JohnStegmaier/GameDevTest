@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://yh0qqubjry0f"]
+[gd_scene load_steps=9 format=3 uid="uid://yh0qqubjry0f"]
 
 [ext_resource type="Script" uid="uid://b8m8dtlo7wr0g" path="res://ball.gd" id="1_ig7tw"]
 
@@ -11,6 +11,11 @@
 [sub_resource type="PlaneMesh" id="PlaneMesh_0xm2m"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ig7tw"]
+
+[sub_resource type="PrismMesh" id="PrismMesh_ig7tw"]
+left_to_right = 1.0
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0xm2m"]
 
 [node name="Main" type="Node"]
 
@@ -45,3 +50,13 @@ skeleton = NodePath("../..")
 transform = Transform3D(100, 0, 0, 0, 5, 0, 0, 0, 100, 0, -2.42478, 0)
 shape = SubResource("BoxShape3D_ig7tw")
 debug_color = Color(0.910526, 0.132978, 0.652274, 0.42)
+
+[node name="Ramp" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.35583, 0.5, -15)
+
+[node name="Wedge" type="MeshInstance3D" parent="Ramp"]
+mesh = SubResource("PrismMesh_ig7tw")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp"]
+transform = Transform3D(0.989949, -0.00707107, 0, 0.989949, 0.00707107, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_0xm2m")
