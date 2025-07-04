@@ -33,10 +33,14 @@ jobs:
       run: |
         mkdir -p ~/.local/share/godot/export_templates/
         cp -r /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono
+        ls -lah ~/.local/share/godot/export_templates/
+        cat ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono
 
     - name: Build project
       run: |
         mkdir -p build/${{ matrix.platform }}
+        pwd && ls -lah
+        ls -lah build/
         cd ${{ env.PROJECT_PATH }}
         if [ "${{ matrix.platform }}" = "windows" ]; then
           godot --headless --verbose --export-release "Windows Desktop" "/build/windows/${{ env.EXPORT_NAME }}.exe"
