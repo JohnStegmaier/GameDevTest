@@ -33,7 +33,12 @@ jobs:
       run: |
         mkdir -p ~/.local/share/godot/export_templates/
         cp -r /root/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono
-        ls -lah ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono
+        pwd && ls -lah ~/.local/share/godot/export_templates/${GODOT_VERSION}.stable.mono
+
+
+    - name: Verify Godot template installation
+      run: |
+        godot --headless --no-window --check-export-templates
 
     - name: Build project
       run: |
@@ -42,9 +47,9 @@ jobs:
         ls -lah build/
         cd ${{ env.PROJECT_PATH }}
         if [ "${{ matrix.platform }}" = "windows" ]; then
-          godot --headless --verbose --export-release "Windows Desktop" "/build/windows/${{ env.EXPORT_NAME }}.exe"
+          godot --headless --verbose --export-release "Windows Desktop" "build/windows/GameDevTest.exe"
         else
-          godot --headless --verbose --export-release "Linux" "/build/linux/${{ env.EXPORT_NAME }}.x86_64"
+          godot --headless --verbose --export-release "Linux" "build/linux/GameDevTest.x86_64"
         fi
 
     - name: Upload ${{ matrix.platform }} artifact
