@@ -127,7 +127,7 @@ shape = SubResource("BoxShape3D_efxa6")
 
 [node name="Kitty Joose 2" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6436, 1.93168, -13.7449)
-mass = 0.198
+mass = 0.1
 
 [node name="Kitty Joose" parent="Kitty Joose 2" instance=ExtResource("7_272bh")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
@@ -142,7 +142,7 @@ shape = SubResource("CylinderShape3D_5vw27")
 
 [node name="Kitty Joose 3" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6436, 1.93168, -15.7028)
-mass = 0.198
+mass = 0.1
 
 [node name="Kitty Joose" parent="Kitty Joose 3" instance=ExtResource("7_272bh")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
@@ -157,7 +157,7 @@ shape = SubResource("CylinderShape3D_5vw27")
 
 [node name="Kitty Joose 4" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.6436, 1.93168, -14.7413)
-mass = 0.198
+mass = 0.1
 
 [node name="Kitty Joose" parent="Kitty Joose 4" instance=ExtResource("7_272bh")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
@@ -172,7 +172,7 @@ shape = SubResource("CylinderShape3D_5vw27")
 
 [node name="Kitty Joose 5" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9741, 1.93168, -14.7413)
-mass = 0.198
+mass = 0.1
 
 [node name="Kitty Joose" parent="Kitty Joose 5" instance=ExtResource("7_272bh")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
@@ -187,7 +187,7 @@ shape = SubResource("CylinderShape3D_5vw27")
 
 [node name="Kitty Joose 6" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8307, 1.93168, -15.1608)
-mass = 0.198
+mass = 0.1
 
 [node name="Kitty Joose" parent="Kitty Joose 6" instance=ExtResource("7_272bh")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
@@ -202,7 +202,7 @@ shape = SubResource("CylinderShape3D_5vw27")
 
 [node name="Kitty Joose 7" type="RigidBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8307, 1.93168, -14.278)
-mass = 0.198
+mass = 0.1
 
 [node name="Kitty Joose" parent="Kitty Joose 7" instance=ExtResource("7_272bh")]
 transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
