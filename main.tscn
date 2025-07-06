@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://yh0qqubjry0f"]
+[gd_scene load_steps=10 format=3 uid="uid://yh0qqubjry0f"]
 
 [ext_resource type="Script" uid="uid://b8m8dtlo7wr0g" path="res://ball.gd" id="1_ig7tw"]
+[ext_resource type="Script" uid="uid://chsojgukbpsb4" path="res://CameraRig.gd" id="2_0xm2m"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_h2yge"]
 
@@ -19,18 +20,16 @@ left_to_right = 1.0
 
 [node name="Main" type="Node"]
 
-[node name="Ball" type="RigidBody3D" parent="."]
+[node name="Ball" type="RigidBody3D" parent="." node_paths=PackedStringArray("camera")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_ig7tw")
+camera = NodePath("../CameraRig")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Ball"]
 mesh = SubResource("SphereMesh_h2yge")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ball"]
 shape = SubResource("SphereShape3D_1bvp3")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 3, 4)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 21.4453, 34.3088)
@@ -60,3 +59,13 @@ mesh = SubResource("PrismMesh_ig7tw")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ramp"]
 transform = Transform3D(0.989949, -0.00707107, 0, 0.989949, 0.00707107, 0, 0, 0, 1, 0, 0, 0)
 shape = SubResource("BoxShape3D_0xm2m")
+
+[node name="CameraRig" type="Node3D" parent="." node_paths=PackedStringArray("target")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+script = ExtResource("2_0xm2m")
+target = NodePath("../Ball")
+distance = 4.0
+height = 2.0
+
+[node name="Camera3D" type="Camera3D" parent="CameraRig"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, 0.5, 0, -0.5, 0.866025, 0, 2, 4)
